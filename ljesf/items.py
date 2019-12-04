@@ -21,7 +21,7 @@ class LjesfItem(scrapy.Item):
     esf_flood_position = scrapy.Field()
     #户型
     esf_houseinfo_roomtype = scrapy.Field()
-    #面积
+    #面积 
     esf_houseinfo_area = scrapy.Field()
     #朝向
     esf_houseinfo_orientation = scrapy.Field()
