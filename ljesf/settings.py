@@ -47,15 +47,18 @@ ROBOTSTXT_OBEY = False
 
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
-#SPIDER_MIDDLEWARES = {
-#    'ljesf.middlewares.LjesfSpiderMiddleware': 543,
-#}
+SPIDER_MIDDLEWARES = {
+   'ljesf.middlewares.LjesfSpiderMiddleware': 543,
+}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
 #    'ljesf.middlewares.LjesfDownloaderMiddleware': 543,
 #}
+DOWNLOADER_MIDDLEWARES = {
+    'ljesf.middlewares.webdriverDownloaderMiddleware':1,
+}
 
 # Enable or disable extensions
 # See https://docs.scrapy.org/en/latest/topics/extensions.html
@@ -68,6 +71,9 @@ ROBOTSTXT_OBEY = False
 #ITEM_PIPELINES = {
 #    'ljesf.pipelines.LjesfPipeline': 300,
 #}
+ITEM_PIPELINES = {
+   'ljesf.pipelines.LjesfPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html

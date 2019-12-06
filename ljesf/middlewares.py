@@ -125,7 +125,8 @@ class webdriverDownloaderMiddleware(object):
         dcap = dict(DesiredCapabilities.CHROME)
         dcap["chrome.page.settings.userAgent"] = chromeua
         # self.browser = webdriver.Chrome(executable_path="D:/Down/chromedriver/76.0.3809.68/chromedriver.exe",desired_capabilities=dcap)
-        self.browser = webdriver.Chrome(executable_path="J:/Down1/chromedriver/79.0.3945.36/chromedriver.exe",desired_capabilities=dcap)
+        # self.browser = webdriver.Chrome(executable_path="J:/Down1/chromedriver/79.0.3945.36/chromedriver.exe",desired_capabilities=dcap)
+        self.browser = webdriver.Chrome(executable_path="J:/Down1/chromedriver/78.0.3904.70/chromedriver.exe",desired_capabilities=dcap)
 
         super(webdriverDownloaderMiddleware, self).__init__()
 
@@ -136,12 +137,12 @@ class webdriverDownloaderMiddleware(object):
         print ("start webdriverDownloaderMiddleware process_request")
         print(spider.name)
         # 判断该spider是否为我们的目标
-        if spider.name == "auctionlist":
+        if spider.name == "esflist":
             self.browser.maximize_window()  # 最大化浏览器窗口
             self.browser.implicitly_wait(2)  # 设置隐式时间等待
             self.browser.get(request.url)
 
-            print (self.browser.title);
+            print (self.browser.title)
             print (self.browser.current_url)
 
             print("===========================================")
@@ -150,8 +151,23 @@ class webdriverDownloaderMiddleware(object):
             print("===========================================")
             # self.browser.close();
 
-            btnnext = self.browser.find_element_by_xpath('//button[@class="btn-next"]')
-            ActionChains(self.browser).move_to_element(btnnext).click(btnnext).perform()
+            # btnnext = self.browser.find_element_by_xpath('//button[@class="btn-next"]')
+            # ActionChains(self.browser).move_to_element(btnnext).click(btnnext).perform()
+
+            
+            
+            # use find_elements_by_xpath , not find_element_by_xpath
+            districtlist = self.browser.find_elements_by_xpath('//div[@data-role="ershoufang"]/div/a')
+            print(districtlist)
+            districtcount = len(districtlist)
+            print(districtcount)
+
+            # if districtcount > 0:
+            #     ActionChains(self.browser).move_to_element().click(btnnext).perform()
+
+
+
+
             print("{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{")
             print(self.browser.current_url)
             #将下一页的地址返回给spider
