@@ -9,6 +9,7 @@ import scrapy
 
 
 class LjesfItem(scrapy.Item):
+
     # define the fields for your item here like:
     # name = scrapy.Field()
     _id = scrapy.Field()
@@ -39,4 +40,24 @@ class LjesfItem(scrapy.Item):
     esf_price_total = scrapy.Field()
     esf_price_measurement = scrapy.Field()
     esf_price_unit = scrapy.Field()
+    esf_date = scrapy.Field()
+    esf_timestamp = scrapy.Field()
 
+class LjdistrictItem(scrapy.Item):
+
+    _id = scrapy.Field()
+    district_title = scrapy.Field()
+    district_text = scrapy.Field()
+    district_href = scrapy.Field()
+    district_date = scrapy.Field()
+    district_timestamp = scrapy.Field()
+
+
+class LjareaItem(scrapy.Item):
+
+    _id = scrapy.Field()
+    area_text = scrapy.Field()
+    area_href = scrapy.Field()
+    area_date = scrapy.Field()
+    area_timestamp = scrapy.Field()
+    area_district_id = scrapy.Field()

@@ -72,7 +72,8 @@ DOWNLOADER_MIDDLEWARES = {
 #    'ljesf.pipelines.LjesfPipeline': 300,
 #}
 ITEM_PIPELINES = {
-   'ljesf.pipelines.LjesfPipeline': 300,
+   # 'ljesf.pipelines.LjesfPipeline': 300,
+   'ljesf.pipelines.districtPipeline': 300,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
