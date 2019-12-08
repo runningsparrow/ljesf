@@ -42,6 +42,7 @@ class LjesfItem(scrapy.Item):
     esf_price_unit = scrapy.Field()
     esf_date = scrapy.Field()
     esf_timestamp = scrapy.Field()
+    esf_secrect_key = scrapy.Field()
 
 class LjdistrictItem(scrapy.Item):
 
@@ -51,6 +52,7 @@ class LjdistrictItem(scrapy.Item):
     district_href = scrapy.Field()
     district_date = scrapy.Field()
     district_timestamp = scrapy.Field()
+    district_secrect_key = scrapy.Field()
 
 
 class LjareaItem(scrapy.Item):
@@ -61,3 +63,4 @@ class LjareaItem(scrapy.Item):
     area_date = scrapy.Field()
     area_timestamp = scrapy.Field()
     area_district_id = scrapy.Field()
+    area_secrect_key = scrapy.Field()

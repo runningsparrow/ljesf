@@ -172,7 +172,7 @@ class webdriverDownloaderMiddleware(object):
 
             print("{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{{")
             print(self.browser.current_url)
-            #将下一页的地址返回给spider
+            # 将下一页的地址返回给spider
             nexturl = self.browser.current_url
             print("}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}")
             

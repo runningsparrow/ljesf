@@ -34,9 +34,9 @@ class districtPipeline(object):
     def process_item(self, item, spider):
         if spider.name == "esflist":
             print ("start process districtPipeline")
-            # print (">>>>>>>>>>>>>>>>>>>>>>>>>>")
+            print (">>>>>>>>>>>>>>>>>>>>>>>>>>")
             print (item)
-            # print ("<<<<<<<<<<<<<<<<<<<<<<<<<<")
+            print ("<<<<<<<<<<<<<<<<<<<<<<<<<<")
 
 
     
@@ -47,38 +47,7 @@ class districtPipeline(object):
             if isinstance(item, LjareaItem):
                 self.lianjiaesfdb.area.insert(item)
 
-        return item
-
-    def close_spider(self,spider):
-
-      #关闭连接
-        if spider.name == "esflist":
-            print ("clsee esflist")
-
-class getareaPipeline(object):
-
-    def open_spider(self, spider):
-        if spider.name == "esflist":
-            print("======pipe esflist========")
-            # 链接数据库
-            self.mongoconn = MongoClient(host="127.0.0.1",port=27017,) #connect to mongodb
-            #for prod
-            # self.mongoconn.ljesf.authenticate("sparrow","123456")  #auth
-            # self.ljesfdb = self.mongoconn.ljesf
-            #for dev
-            self.mongoconn.lianjiaesf.authenticate("sparrow","123456")  #auth
-            self.lianjiaesfdb = self.mongoconn.lianjiaesf
-    
-    def process_item(self, item, spider):
-        if spider.name == "esflist":
-            print ("start process districtPipeline")
-            # print (">>>>>>>>>>>>>>>>>>>>>>>>>>")
-            print (item)
-            # print ("<<<<<<<<<<<<<<<<<<<<<<<<<<")
-
-
-    
-            # 读取数据库
+            print("after insert")
 
         return item
 
@@ -87,3 +56,4 @@ class getareaPipeline(object):
       #关闭连接
         if spider.name == "esflist":
             print ("clsee esflist")
+
